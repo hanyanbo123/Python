@@ -1,1 +1,46 @@
-1123
+设置username和email，因为github每次commit都会记录他们
+
+输入以下两个命令：
+
+$ git config --global user.name "your name"（注册时填写的名字）
+
+$ git config --global user.email "email@qq.com"（自己的邮箱）
+
+开始建立连接：
+
+git remote add origin git@github.com:yourName/yourRepo.git
+
+yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git
+如何使用git上传代码到github
+
+如果出现了以下情况fatal: remote origin already exists.说明以前已经连接过此项目，此时需要输入命令：git remote rm origin（移除连接，一般新建的仓库不会出现此问题），然后重新连接
+
+输入：git add test.txt (将test文件上传，如果需要上传所有文件请输入：
+
+git add . )
+如何使用git上传代码到github
+
+开始提交刚才添加的文件，输入：
+
+git commit -m "first commit"  （会看到这里列出了所有你需要上传的文件）
+如何使用git上传代码到github
+
+最后使用git push命令，将本地仓库推送到远程服务器
+
+输入：git push origin master
+
+成功后效果如下
+如何使用git上传代码到github
+5
+
+进入github个人后台，会发现test.txt已经成功上传.
+
+下载项目直接使用git clone https://github.com/TaberZaly/online-shop.git即可或者直接进入github下载zip压缩包。
+如何使用git上传代码到github
+END
+
+------------------------------------------------------
+
+    如果出现此错误fatal: remote origin already exists.表示连接问题，原因可能是仓库已经和本地的某一个项目建立了连接，使用新项目与原来仓库连接会出现这个问题，所以先移除连接git remote rm origin
+    当输入git commit -m "first commit"后，在你移除原连接新建后，并没有列出你所要上传的文件，而显示没有目录或者文件。此时直接新建仓库重新执行以上步骤即可。
+    初次上传时需要配置ssh key 与设置config --global信息，之后上传一般不需要了。
